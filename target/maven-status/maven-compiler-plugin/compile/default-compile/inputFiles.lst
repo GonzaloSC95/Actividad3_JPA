@@ -1,0 +1,11 @@
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Entidad\Editorial.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Persistencia\Interfaz\DaoInterfaceMYSQL.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Vista\Vista.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Entidad\Autor.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Entidad\Libro.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Entidad\Direccion.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Persistencia\DaoAutor.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Entidad\Libreria.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Persistencia\DaoLibreria.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Persistencia\DaoLibro.java
+D:\PROYECTOS_JAVA\Actividad3_JPA\src\main\java\Modelo\Persistencia\DaoEditorial.java

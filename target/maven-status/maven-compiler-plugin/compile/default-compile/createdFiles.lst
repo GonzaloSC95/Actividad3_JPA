@@ -1,0 +1,11 @@
+Modelo\Persistencia\DaoLibreria.class
+Modelo\Entidad\Direccion.class
+Vista\Vista.class
+Modelo\Entidad\Autor.class
+Modelo\Entidad\Libro.class
+Modelo\Entidad\Editorial.class
+Modelo\Persistencia\DaoEditorial.class
+Modelo\Persistencia\DaoAutor.class
+Modelo\Persistencia\DaoLibro.class
+Modelo\Persistencia\Interfaz\DaoInterfaceMYSQL.class
+Modelo\Entidad\Libreria.class

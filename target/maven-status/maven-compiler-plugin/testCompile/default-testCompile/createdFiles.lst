@@ -1,0 +1,7 @@
+Test\TestDelete.class
+Test\TestInsertManyToMany.class
+Test\TestFind.class
+Test\TestConexion.class
+Test\TestInserOneToMany.class
+Test\TestUpdate.class
+Test\TestSelectALL.class
