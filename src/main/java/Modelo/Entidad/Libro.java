@@ -46,10 +46,19 @@ public class Libro {
             inverseJoinColumns = @JoinColumn(name = "fk_id_libreria", referencedColumnName = "id")) //FKs que aportan el resto de entidades
     private List<Libreria> librerias;
 
+    /**
+     *
+     */
     public Libro() {
         super();
     }
 
+    /**
+     *
+     * @param string
+     * @param d
+     * @param precio
+     */
     public Libro(String titulo, double precio) {
         super();
         this.titulo = titulo;
@@ -57,6 +66,14 @@ public class Libro {
         this.librerias=new ArrayList<>();
     }
 
+    /**
+     *
+     * @param string
+     * @param d
+     * @param autor
+     * @param list
+     * @param edtrl
+     */
     public Libro(String titulo, double precio, Autor autor, List<Libreria> librerias, Editorial editorial) {
         super();
         try {
@@ -70,6 +87,12 @@ public class Libro {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @param d
+     * @param precio
+     */
     public Libro(int id, double precio) {
         super();
         try {
@@ -82,54 +105,107 @@ public class Libro {
     }
 
     ////GETTERS Y SETTERS//////////////////////
+
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTitulo() {
         return titulo;
     }
 
+    /**
+     *
+     * @param titulo
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getPrecio() {
         return precio;
     }
 
+    /**
+     *
+     * @param precio
+     */
     public void setPrecio(double precio) {
         this.precio = precio;
     }
 
+    /**
+     *
+     * @return
+     */
     public Editorial getEditorial() {
         return editorial;
     }
 
+    /**
+     *
+     * @param editorial
+     */
     public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
 
+    /**
+     *
+     * @return
+     */
     public Autor getAutor() {
         return autor;
     }
 
+    /**
+     *
+     * @param autor
+     */
     public void setAutor(Autor autor) {
         this.autor = autor;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Libreria> getLibrerias() {
         return librerias;
     }
 
+    /**
+     *
+     * @param librerias
+     */
     public void setLibrerias(List<Libreria> librerias) {
         this.librerias = librerias;
     }
 
+    /**
+     *
+     * @param libreria
+     */
     public void setLibreria(Libreria libreria) {
         this.librerias.add(libreria);
     }

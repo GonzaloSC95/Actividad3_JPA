@@ -20,6 +20,10 @@ public class DaoLibreria implements DaoInterfaceMYSQL {
     private EntityTransaction entityTransaction;
     /////////////////////////////
 
+    /**
+     *
+     * @return
+     */
     public boolean abrirConexion() {
         try {
             entityManagerFactory = Persistence.createEntityManagerFactory("JPALibrerias");
@@ -31,6 +35,10 @@ public class DaoLibreria implements DaoInterfaceMYSQL {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean cerrarConexion() {
         try {
@@ -44,6 +52,11 @@ public class DaoLibreria implements DaoInterfaceMYSQL {
 
     }
 
+    /**
+     *
+     * @param libreria
+     * @return
+     */
     @Override
     public boolean insert(Object libreria) {
         try {
@@ -62,6 +75,11 @@ public class DaoLibreria implements DaoInterfaceMYSQL {
 
     }
 
+    /**
+     *
+     * @param libreria
+     * @return
+     */
     @Override
     public boolean update(Object libreria) {
         try {
@@ -80,6 +98,11 @@ public class DaoLibreria implements DaoInterfaceMYSQL {
 
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public boolean delete(int id) {
         try {
@@ -99,6 +122,11 @@ public class DaoLibreria implements DaoInterfaceMYSQL {
 
     }
 
+    /**
+     *
+     * @param tabla
+     * @return
+     */
     @Override
     public List<Libreria> selectAll(String tabla) {
         try {
@@ -114,6 +142,11 @@ public class DaoLibreria implements DaoInterfaceMYSQL {
 
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Libreria select(int id) {
         try {

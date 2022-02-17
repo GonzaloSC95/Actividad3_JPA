@@ -5,6 +5,9 @@ import Modelo.Entidad.Direccion;
 import Modelo.Entidad.Editorial;
 import Modelo.Entidad.Libreria;
 import Modelo.Entidad.Libro;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -13,18 +16,52 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.swing.JTextArea;
 
+/**
+ *
+ * @author Gonzalo
+ */
 public class DaoCreateBBDD {
 
+    /**
+     *
+     */
+    public void createSchema() {
+        String url = "jdbc:mysql://localhost:3306/";
+        String usuario = "root";
+        String password = "";
+        String nombreSchema = "jpa_librerias";
+        //-----------------------------------
+        try (Connection conexion = DriverManager.getConnection(url, usuario, password);) {
+            PreparedStatement sentencia = conexion.prepareStatement("CREATE SCHEMA " + nombreSchema + ";");
+            int sntenciaEjecutada = sentencia.executeUpdate();
+            if (sntenciaEjecutada == 1) {
+                System.out.println("Esquema creado " + nombreSchema);
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getLocalizedMessage());
+        }
+
+    }
+
+    /**
+     *
+     */
     public void limpiarTablas() {
         try {
             EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPALibrerias");
             EntityManager em = factory.createEntityManager();
             EntityTransaction et = em.getTransaction();
             et.begin();
-            em.createQuery("DELETE FROM Libro").executeUpdate();
+            /*em.createQuery("DELETE FROM Libro").executeUpdate();
             em.createQuery("DELETE FROM Libreria").executeUpdate();
             em.createQuery("DELETE FROM Autor").executeUpdate();
-            em.createQuery("DELETE FROM Editorial").executeUpdate();
+            em.createQuery("DELETE FROM Editorial").executeUpdate();*/
+            //---------------------------------------------------------
+            em.createNativeQuery("DROP TABLE Libreria_libro").executeUpdate();
+            em.createNativeQuery("DROP TABLE Libros").executeUpdate();
+            em.createNativeQuery("DROP TABLE Librerias").executeUpdate();
+            em.createNativeQuery("DROP TABLE Autores").executeUpdate();
+            em.createNativeQuery("DROP TABLE Editoriales").executeUpdate();
             et.commit();
             em.close();
             factory.close();
@@ -33,7 +70,10 @@ public class DaoCreateBBDD {
         }
     }
 
-    //JTextArea jTextArea
+    /**
+     *
+     * @param jTextArea
+     */
     public void crearBBDD(JTextArea jTextArea) {
         //////////////////////DIRECCIONES////////////////////////
         Direccion dir1 = new Direccion("España", "Madrid", "CALLE MONTALBAN 1", "28014 ");
@@ -150,6 +190,10 @@ public class DaoCreateBBDD {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public long checkNRows() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPALibrerias");
         EntityManager em = factory.createEntityManager();

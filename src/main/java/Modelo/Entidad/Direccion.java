@@ -23,10 +23,10 @@ public class Direccion {
 
     /**
      *
-     * @param pais
-     * @param ciudad
-     * @param calle
-     * @param cp
+     * @param string
+     * @param string1
+     * @param string2
+     * @param string3
      */
     public Direccion(String pais, String ciudad, String calle, String cp) {
         super();

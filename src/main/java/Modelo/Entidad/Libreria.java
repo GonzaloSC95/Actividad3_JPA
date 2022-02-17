@@ -35,10 +35,19 @@ public class Libreria {
     @ManyToMany(mappedBy = "librerias", cascade = {CascadeType.MERGE, CascadeType.PERSIST,CascadeType.REFRESH}, fetch = FetchType.LAZY)
     private List<Libro> libros;
 
+    /**
+     *
+     */
     public Libreria() {
         super();
     }
 
+    /**
+     *
+     * @param nombre
+     * @param string1
+     * @param direccion
+     */
     public Libreria(String nombre, String nombre_duenio, Direccion direccion) {
         super();
         try {
@@ -51,6 +60,12 @@ public class Libreria {
 
     }
 
+    /**
+     *
+     * @param id
+     * @param list
+     * @param i
+     */
     public Libreria(int id, List<Libro> libros) {
         super();
         try {
@@ -61,46 +76,90 @@ public class Libreria {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre_duenio() {
         return nombre_duenio;
     }
 
+    /**
+     *
+     * @param nombre_duenio
+     */
     public void setNombre_duenio(String nombre_duenio) {
         this.nombre_duenio = nombre_duenio;
     }
 
+    /**
+     *
+     * @return
+     */
     public Direccion getDireccion() {
         return direccion;
     }
 
+    /**
+     *
+     * @param direccion
+     */
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Libro> getLibros() {
         return libros;
     }
 
+    /**
+     *
+     * @param libros
+     */
     public void setLibros(List<Libro> libros) {
         this.libros = libros;
     }
 
+    /**
+     *
+     * @param libro
+     */
     public void setLibro(Libro libro) {
         this.libros.add(libro);
     }

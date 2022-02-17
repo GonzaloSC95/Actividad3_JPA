@@ -8,6 +8,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+/**
+ *
+ * @author Gonzalo
+ */
 public class DaoLibro implements DaoInterfaceMYSQL {
 
     private String JPAEntityName = "JPALibrerias";
@@ -17,6 +21,10 @@ public class DaoLibro implements DaoInterfaceMYSQL {
     private EntityTransaction entityTransaction;
     //////////////////////////////////////
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean abrirConexion() {
         try {
@@ -29,6 +37,10 @@ public class DaoLibro implements DaoInterfaceMYSQL {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean cerrarConexion() {
         try {
@@ -41,6 +53,11 @@ public class DaoLibro implements DaoInterfaceMYSQL {
         }
     }
 
+    /**
+     *
+     * @param libro
+     * @return
+     */
     @Override
     public boolean insert(Object libro) {
         try {
@@ -58,6 +75,11 @@ public class DaoLibro implements DaoInterfaceMYSQL {
         }
     }
 
+    /**
+     *
+     * @param libro
+     * @return
+     */
     @Override
     public boolean update(Object libro) {
         try {
@@ -75,6 +97,11 @@ public class DaoLibro implements DaoInterfaceMYSQL {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public boolean delete(int id) {
         try {
@@ -93,6 +120,11 @@ public class DaoLibro implements DaoInterfaceMYSQL {
         }
     }
 
+    /**
+     *
+     * @param tabla
+     * @return
+     */
     @Override
     public List<Libro> selectAll(String tabla) {
         try {
@@ -108,6 +140,11 @@ public class DaoLibro implements DaoInterfaceMYSQL {
 
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Libro select(int id) {
         try {

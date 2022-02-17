@@ -46,6 +46,12 @@ public class Autor {
         libros= new ArrayList<>();
     }
 
+    /**
+     *
+     * @param nombre
+     * @param string1
+     * @param fNacimiento
+     */
     public Autor(String nombre, String apellidos, String fNacimiento) {
         super();
         try {
@@ -64,6 +70,8 @@ public class Autor {
      *
      * @param id
      * @param libros
+     * @param i
+     * @param list
      */
     public Autor(int id, List<Libro> libros) {
         super();
@@ -156,6 +164,10 @@ public class Autor {
         this.libros = libros;
     }
     
+    /**
+     *
+     * @param libro
+     */
     public void setLibro(Libro libro) {
         this.libros.add(libro);
     }

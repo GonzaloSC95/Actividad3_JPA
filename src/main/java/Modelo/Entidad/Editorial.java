@@ -43,7 +43,7 @@ public class Editorial {
     /**
      *
      * @param nombre
-     * @param direccros
+     * @param direccion
      */
     public Editorial(String nombre, Direccion direccion) {
         super();
@@ -56,6 +56,11 @@ public class Editorial {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @param libros
+     */
     public Editorial(int id, List<Libro> libros) {
         super();
         try {
@@ -133,6 +138,10 @@ public class Editorial {
         this.libros = libros;
     }
     
+    /**
+     *
+     * @param libro
+     */
     public void setLibro(Libro libro) {
         this.libros.add(libro);
     }

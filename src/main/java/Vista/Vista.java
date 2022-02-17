@@ -9,9 +9,13 @@ import Modelo.Persistencia.DaoEditorial;
 import Modelo.Persistencia.DaoLibreria;
 import Modelo.Persistencia.DaoLibro;
 import java.awt.Toolkit;
-import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ *
+ * @author Gonzalo
+ */
 public class Vista extends javax.swing.JFrame {
 
     //-------------------------------
@@ -22,6 +26,9 @@ public class Vista extends javax.swing.JFrame {
     private DaoCreateBBDD daoCreateBBDD;
     //-------------------------------
 
+    /**
+     *
+     */
     public Vista() {
         //-----------------------------
         daoAutor = new DaoAutor();
@@ -37,6 +44,8 @@ public class Vista extends javax.swing.JFrame {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/iconoLibros.png")));
         //--------------------------
         setVisible(true);
+        //------------------------------
+        daoCreateBBDD.createSchema();
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////
@@ -71,7 +80,7 @@ public class Vista extends javax.swing.JFrame {
         Panel.setMaximumSize(new java.awt.Dimension(1001, 610));
         Panel.setMinimumSize(new java.awt.Dimension(1001, 610));
         Panel.setPreferredSize(new java.awt.Dimension(1001, 610));
-        Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Panel.setLayout(null);
 
         crearBBDD.setBackground(new java.awt.Color(56, 16, 40));
         crearBBDD.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -87,7 +96,8 @@ public class Vista extends javax.swing.JFrame {
                 crearBBDDActionPerformed(evt);
             }
         });
-        Panel.add(crearBBDD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 40));
+        Panel.add(crearBBDD);
+        crearBBDD.setBounds(10, 20, 130, 40);
 
         limpiarBBDD.setBackground(new java.awt.Color(56, 16, 40));
         limpiarBBDD.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -103,7 +113,8 @@ public class Vista extends javax.swing.JFrame {
                 limpiarBBDDActionPerformed(evt);
             }
         });
-        Panel.add(limpiarBBDD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 130, 40));
+        Panel.add(limpiarBBDD);
+        limpiarBBDD.setBounds(10, 70, 130, 40);
 
         exit.setBackground(new java.awt.Color(56, 16, 40));
         exit.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -119,13 +130,15 @@ public class Vista extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
-        Panel.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 130, 40));
+        Panel.add(exit);
+        exit.setBounds(10, 120, 130, 40);
 
         labelMostrar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         labelMostrar.setForeground(new java.awt.Color(187, 51, 0));
         labelMostrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelMostrar.setText("MOSTRAR");
-        Panel.add(labelMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 70, 62));
+        Panel.add(labelMostrar);
+        labelMostrar.setBounds(890, 10, 70, 62);
 
         mostrarLibros_autor_editorial.setBackground(new java.awt.Color(56, 16, 40));
         mostrarLibros_autor_editorial.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -141,13 +154,15 @@ public class Vista extends javax.swing.JFrame {
                 mostrarLibros_autor_editorialActionPerformed(evt);
             }
         });
-        Panel.add(mostrarLibros_autor_editorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 70, 110, 40));
+        Panel.add(mostrarLibros_autor_editorial);
+        mostrarLibros_autor_editorial.setBounds(870, 70, 110, 40);
 
         label_libros_autores_editoriales.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         label_libros_autores_editoriales.setForeground(new java.awt.Color(187, 51, 0));
         label_libros_autores_editoriales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_libros_autores_editoriales.setText("Autor + Editorial");
-        Panel.add(label_libros_autores_editoriales, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 110, 110, 30));
+        Panel.add(label_libros_autores_editoriales);
+        label_libros_autores_editoriales.setBounds(870, 110, 110, 30);
 
         mostrarAutores__llibros.setBackground(new java.awt.Color(56, 16, 40));
         mostrarAutores__llibros.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -163,13 +178,15 @@ public class Vista extends javax.swing.JFrame {
                 mostrarAutores__llibrosActionPerformed(evt);
             }
         });
-        Panel.add(mostrarAutores__llibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 170, 110, 40));
+        Panel.add(mostrarAutores__llibros);
+        mostrarAutores__llibros.setBounds(870, 170, 110, 40);
 
         label_autores_libros.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         label_autores_libros.setForeground(new java.awt.Color(187, 51, 0));
         label_autores_libros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_autores_libros.setText("Autor + libros");
-        Panel.add(label_autores_libros, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 210, 110, 30));
+        Panel.add(label_autores_libros);
+        label_autores_libros.setBounds(870, 210, 110, 30);
 
         mostrarLibrerias_libros.setBackground(new java.awt.Color(56, 16, 40));
         mostrarLibrerias_libros.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -185,13 +202,15 @@ public class Vista extends javax.swing.JFrame {
                 mostrarLibrerias_librosActionPerformed(evt);
             }
         });
-        Panel.add(mostrarLibrerias_libros, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 270, 110, 40));
+        Panel.add(mostrarLibrerias_libros);
+        mostrarLibrerias_libros.setBounds(870, 270, 110, 40);
 
         label_librerias_libros.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         label_librerias_libros.setForeground(new java.awt.Color(187, 51, 0));
         label_librerias_libros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_librerias_libros.setText("Librerías + Libros");
-        Panel.add(label_librerias_libros, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 310, 110, 30));
+        Panel.add(label_librerias_libros);
+        label_librerias_libros.setBounds(870, 310, 110, 30);
 
         mostrarLibros_librerias.setBackground(new java.awt.Color(56, 16, 40));
         mostrarLibros_librerias.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -207,13 +226,15 @@ public class Vista extends javax.swing.JFrame {
                 mostrarLibros_libreriasActionPerformed(evt);
             }
         });
-        Panel.add(mostrarLibros_librerias, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 390, 110, 40));
+        Panel.add(mostrarLibros_librerias);
+        mostrarLibros_librerias.setBounds(870, 390, 110, 40);
 
         label_libros_librerias.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         label_libros_librerias.setForeground(new java.awt.Color(187, 51, 0));
         label_libros_librerias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_libros_librerias.setText("Libros + Librerías");
-        Panel.add(label_libros_librerias, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 430, 110, 30));
+        Panel.add(label_libros_librerias);
+        label_libros_librerias.setBounds(870, 430, 110, 30);
 
         jScrollPane1.setBorder(null);
 
@@ -231,10 +252,12 @@ public class Vista extends javax.swing.JFrame {
         cajaMostrarTexto.setRequestFocusEnabled(false);
         jScrollPane1.setViewportView(cajaMostrarTexto);
 
-        Panel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 580, 450));
+        Panel.add(jScrollPane1);
+        jScrollPane1.setBounds(210, 100, 580, 450);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondo.jpg"))); // NOI18N
-        Panel.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        Panel.add(fondo);
+        fondo.setBounds(0, 0, 1001, 610);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -387,6 +410,10 @@ public class Vista extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mostrarLibros_libreriasActionPerformed
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String args[]) {
         try {
             new Vista();
