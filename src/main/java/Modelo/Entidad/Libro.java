@@ -42,8 +42,8 @@ public class Libro {
     //////////////////////////////
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST,CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinTable(name = "libreria_libro",
-            joinColumns = @JoinColumn(name = "fk_id_libro", referencedColumnName = "id"), //FK que aporta Libro
-            inverseJoinColumns = @JoinColumn(name = "fk_id_libreria", referencedColumnName = "id")) //FKs que aportan el resto de entidades
+            joinColumns = @JoinColumn(name = "fk_id_pelicula", referencedColumnName = "id"), //FK que aporta Libro
+            inverseJoinColumns = @JoinColumn(name = "fk_id_autor", referencedColumnName = "id")) //FKs que aportan el resto de entidades
     private List<Libreria> librerias;
 
     /**
